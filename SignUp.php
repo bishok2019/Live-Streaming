@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
             echo '<script>alert("Please validate the CAPTCHA.")</script>';
             exit;
         } else {
-            $secret = "6Lce8WUlAAAAAIxG3-Q9FP1-V_S68vasowlwDQJe";
+            $secret = "enter your secret key provided by google reCaptcha";
             $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $recaptcha;
             $response = file_get_contents($url);
 
@@ -72,13 +72,13 @@ if (isset($_POST['submit'])) {
                     $mail->isSMTP();                                            //Send using SMTP
                     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'bishokpaudel54@gmail.com';                     //SMTP username
-                    $mail->Password   = 'cgkyimnzjribfjks';                               //SMTP password
+                    $mail->Username   = 'enter your email';                     //SMTP username
+                    $mail->Password   = 'enter your app password';                               //SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                     $mail->Port       = 465;                //TCP port to connect to; use 587 if you have
                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                     //Recipients
-                    $mail->setFrom('bishokpaudel54@gmail.com','Bishok Paudel');
+                    $mail->setFrom('enter your email','enter your name');
                     $mail->addAddress($email,$name);
                     //Content
                     $mail->isHTML(true);                                  //Set email format to HTML
@@ -202,7 +202,7 @@ if (isset($_POST['submit'])) {
                     </i>
                         <input class="" id = "cpassword" type="password" name="Conf-Password" placeholder="Confirm Password" />
                     </div>
-                    <div id="divRecaptcha"class="g-recaptcha" data-sitekey="6Lce8WUlAAAAAEuTUs-Mdn8XPeyZLge3c_Xy0N5W"></div>
+                    <div id="divRecaptcha"class="g-recaptcha" data-sitekey="enter your sitekey provided by google reCaptha"></div>
                     <input type="submit" name="submit" class="btn"onclick="return validateCaptcha()" value="Sign up" />
                     <p class="social-text">Or Sign up with social platforms</p>
                     <div class="social-media">
